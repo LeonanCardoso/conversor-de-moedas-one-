@@ -2,34 +2,24 @@ package br.com.one.services.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Moedas {
     @SerializedName("base_code")
     private String nomeMoeda;
-    @SerializedName("conversion_rates")
-    Map<String,Double> conversion = new HashMap<>();
+    @SerializedName("conversion_result")
+    private Double conversionResult;
 
-    public Moedas(String nomeMoeda, Map<String, Double> conversion) {
+    public Moedas(String nomeMoeda, Double conversionResult) {
         this.nomeMoeda = nomeMoeda;
-        this.conversion = conversion;
+        this.conversionResult = conversionResult;
     }
-
-    public String getNomeMoeda() {
-        return nomeMoeda;
-    }
-
-    public void setNomeMoeda(String nomeMoeda) {
-        this.nomeMoeda = nomeMoeda;
-    }
-
 
     @Override
     public String toString() {
-        return "Moedas{" +
-                "Moeda='" + nomeMoeda + '\''+
-                ", conversion=" + conversion +
+        return "Conversão {" +
+                "Moeda a ser convertida = '" + nomeMoeda + '\'' +
+                ", Resultado da conversão= " + conversionResult +
                 '}';
     }
 }

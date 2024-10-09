@@ -1,9 +1,12 @@
 import br.com.one.services.ApiService;
+import br.com.one.services.models.UI;
 
 public class Main {
     public static void main(String[] args) {
         ApiService apiService = new ApiService();
-        apiService.Moeda("USD", "BRL", 1.0);
+        UI ui = new UI();
+        ui.UIStart();
+
 
     }
 }

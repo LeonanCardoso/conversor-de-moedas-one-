@@ -2,13 +2,14 @@ package br.com.one.services.models;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Map;
 
 public class Moedas {
     @SerializedName("base_code")
     private String nomeMoeda;
     @SerializedName("conversion_result")
     private Double conversionResult;
+
+
 
     public Moedas(String nomeMoeda, Double conversionResult) {
         this.nomeMoeda = nomeMoeda;

@@ -1,12 +1,9 @@
-import br.com.one.services.ApiService;
-import br.com.one.services.models.UI;
+import br.com.one.currency.ApiService;
+import br.com.one.currency.models.ui.CurrencyConverterUI;
 
 public class Main {
     public static void main(String[] args) {
-        ApiService apiService = new ApiService();
-        UI ui = new UI();
+        CurrencyConverterUI ui = new CurrencyConverterUI();
         ui.UIStart();
-
-
     }
 }

@@ -1,9 +1,9 @@
-package br.com.one.services.models;
+package br.com.one.currency.models;
 
 public class Currency {
     private String convertFrom;
     private String convertTo;
-    private String amountToConverter;
+    private Double amountToConverter;
 
     public String getConvertFrom() {
         return convertFrom;
@@ -21,12 +21,12 @@ public class Currency {
         this.convertTo = convertTo;
     }
 
-    public String getAmountToConverter() {
+    public Double getAmountToConverter() {
         return amountToConverter;
     }
 
     public void setAmountToConverter(Double amountToConverter) {
-        this.amountToConverter = String.valueOf(amountToConverter);
+        this.amountToConverter = amountToConverter;
     }
 
 }

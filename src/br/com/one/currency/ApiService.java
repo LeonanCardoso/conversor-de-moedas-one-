@@ -1,7 +1,7 @@
-package br.com.one.services;
+package br.com.one.currency;
 
-import br.com.one.services.models.Currency;
-import br.com.one.services.models.Moedas;
+import br.com.one.currency.models.Currency;
+import br.com.one.currency.models.ExchangeRate;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -20,7 +20,6 @@ public class ApiService {
         try{
 
             URI uri = URI.create("https://v6.exchangerate-api.com/v6/"+ api +"/pair/" + currency.getConvertFrom()+ "/" + currency.getConvertTo() + "/" + currency.getAmountToConverter());
-            System.out.println(uri);
             HttpClient client = HttpClient.newHttpClient();
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(uri)
@@ -28,9 +27,8 @@ public class ApiService {
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
             String json = response.body();
-            System.out.println("json" +json);
-            Moedas moedas = gson.fromJson(json, Moedas.class);
-            System.out.println(moedas);
+            ExchangeRate exchangeRate = gson.fromJson(json, ExchangeRate.class);
+            System.out.println(exchangeRate);
 
         } catch(Exception e){
             System.out.println(e.getMessage());

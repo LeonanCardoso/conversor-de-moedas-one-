@@ -31,7 +31,7 @@ public class ExchangeRate {
 
     @Override
     public String toString() {
-        return "Você converteu " + originalValue() + " " + nomeMoeda +
-                " para " + targetCode + ", com um resultado de " + String.format("%.2f", conversionResult) + ".";
+        return "Foi convertido " + String.format("%.2f", originalValue()) + " " + nomeMoeda +
+                " para " + String.format("%.2f", conversionResult) + " " + targetCode + ".";
     }
 }

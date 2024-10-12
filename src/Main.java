@@ -1,4 +1,3 @@
-import br.com.one.currency.ApiService;
 import br.com.one.currency.models.ui.CurrencyConverterUI;
 
 public class Main {
